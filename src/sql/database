@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS comp5347_assn02;
+
+USE comp5347_assn02;
+
+DROP TABLE IF EXISTS Users;
+
+CREATE TABLE Users (
+	username		varchar(15) NOT NULL,
+	password		varchar(15) NOT NULL,
+	user_role 	varchar(15) NOT NULL,
+	primary key (username, password)
+);
+
+CREATE TABLE Products (
+	id				int NOT NULL primary key,
+	url			varchar(2083) NOT NULL,
+	cost			float(8,2) NOT NULL,
+);
+
+CREATE TABLE Orders (
+
+);
