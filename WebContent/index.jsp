@@ -1,9 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>COMP5347 - Simple E-commerce System</title>
 	<link rel="stylesheet" type="text/css" href="resources/css/style.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css" media="screen" />
@@ -11,7 +12,7 @@
 <body>
 
 	<!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -20,12 +21,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="">Simple E-commerce System</a>
+          <a class="navbar-brand" href="${pageContext.request.contextPath}">Simple E-commerce System</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">Catalog</a></li>
-            <li><a href="#about">Orders</a></li>
+            <li><a id="catalogue" href="${pageContext.request.contextPath}/catalogue">Catalogue</a></li>
+            <li><a id="orders" href="${pageContext.request.contextPath}/orders">Orders</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown active">
@@ -40,22 +41,13 @@
       </div>
     </nav>
     
-    <div class="container">
-
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>To see the difference between static and fixed top navbars, just scroll.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
-      </div>
+    <div id="content" class="container">
 
     </div> <!-- /container -->
     
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="resources/js/ajax.js"></script>
 </body>
 </html>

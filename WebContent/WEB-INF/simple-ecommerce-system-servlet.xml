@@ -12,17 +12,17 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
   
 	<context:component-scan base-package="controller" />
- <!--  
-	<mvc:default-servlet-handler />
-
-	<mvc:view-controller path="/" view-name="index"/>-->	
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-		<property name="prefix" value="/WEB-INF/jsp/" />
-		<property name="suffix" value=".jsp" />
 	
-	</bean>
-	<mvc:resources mapping="/resources/**" location="/resources/"/>
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:viewClass="org.springframework.web.servlet.view.JstlView"
+		p:prefix="WEB-INF/jsp/"
+		p:suffix=".jsp"
+		p:order="0" />
+		
+	<mvc:resources 
+		mapping="/resources/**"
+		location="/resources/" />
+		
 	<mvc:annotation-driven />
 </beans>

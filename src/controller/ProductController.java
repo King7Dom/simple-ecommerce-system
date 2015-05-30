@@ -1,21 +1,19 @@
-package controllers;
+package controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @RequestMapping("/catalogue")
-@SessionAttributes("cart")
 public class ProductController {
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(method=RequestMethod.GET)
 	public String catalogue(Model model) {
-		
-		model.addAttribute("products", null);
-		return "productlist";
+		//TODO: Do catalogue setup here, for example load a generic list of item into the catalogue
+		System.out.println("Getting catalogue");
+		return "catalogue";
 	}
 	
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
